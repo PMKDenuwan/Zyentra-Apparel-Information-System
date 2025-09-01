@@ -1,0 +1,142 @@
+Zyentra Apparel Store 
+===========================================================================================
+
+Zyentra is a start-up company that involves to wholesale garments into clothing shop.
+They expects to do retail  to normal customer at the near future. 
+
+Zyentra Company is hired me as a Technical Helper to their company for build up systemic approach for managing their internal process.
+It means at the one time I need to be a business analyst, full-stack developer.
+Actually I am happy to hire about me because I need experience and apply my knowledge into real world.
+
+So I do some interviews with them and get idea about how actually process internal procedure.
+
+Here is the what I know 
+
+Zyentra is a startup company that buys fabrics from textile shops and making garments with employees and family members and wholesale to the clothing shops. They are just in the initial state and they are expecting to expand their business at the near future.
+They need to maintain quality process from their initial state with real-time progress tracking because they need to manage their information with proper manner as well as track how company and they work hard and reach to  success day by day.
+
+So When I am planning the system, need to consider this point because they are now start up with small needs but they expand it at the future. So my planning must be strong.
+And they are not very technical people, so I need to plan simply understandable handle  but more productivity ones. Because there are no one  to handle our system.They also handle our system.They only use for our system for track and visualize their progress.
+
+------------------------------------------------------------------------------------------
+
+What Actually happen and What they want ?
+
+They need to maintain think like a journel daily that ensure what they done a t the end of the day.Num. of Items produce and Num. of Working hours.
+Can we propose thing like how GitHub shows the commits.
+
+GitHub shows Contribute graph for year by and each day has 1 small box and that box coloerd means there is a commit and not menans no any commits, There are that kind of 365 small boxes.When hover colored box that shows like "2 contributions on March 20th"Also can filter by year.
+
+Can we apply this matrix for our system.
+
+++++++ Journel +++++
+
+At the end of the day user fills the thing like journal.
+Num. Of Items produce :                         
+Upload Produce design Photo :
+Num. Of Workers : _______ (If user enter 2 need to dynamically generate two fields)
+   Emp ID | Emp Name | Working Hours | Items Produced
+   E001   | Irosha   |    8          |   5
+   E002   | Uresha   |    2          |   2      **can add owner name. 
+In addition ,
+   Contribution of :
+      Owner:      	Husband:         Daughter:       (Use Checkboxes)   
+--->No need to show it working hours graph if employees are worked. If not it must be show with different color.
+Note : 
+
+We provide two graphs for :
+   1) Num. of Items Produce
+        When hover it shows num. of items with num. of employees on the date
+        no employee attend/no work only owner works show it within different colour.
+   2) Num. of Working hours 
+         When hover it shows num. of hours with num. of employees on the date
+        no employee attend/no work only owner works show it within different colour.
+  can filter by month and year - small box represents one day
+
+This is very impotant thing they expect from me.
+Matrix to track the progress of day by day.
+
++++++ Employee +++++
+
+There are 4 kinds of job types in their company.
+*Daily Wage Job (8 hours)
+*Hourly Job
+*Piece Rate Job
+*Full Time Job (permanent payment for month)
+One employee can holds multiple job types.
+If employee desire, he can work on daily as well as hourly job as well as piece rate job.
+
+They need to track how many days - hours worked by each employee.
+Can we get that data within the journal that day upload the end of the day ? 
+Or can separately mark the attendance (I think that way is hard to company)
+Is there any way to address this ?
+ 
+-----Add Employee Form------
+EmpID :            Job Type :   (Use Checkboxes)
+EmpName :
+Adress : 
+Telephone 1 :      Telephone 2 :
+
+Also visualize graph that mention above to how emplooyes are attend daily.
+When box hover shows "2 empolyees attend on 1st of sep"
+
+They need to know about at the end of the month,
+    Total expenses for all employees :
+    Total items that produce :
+
+    Paid salaries for each employee :
+    Produce items of each employee :
+    working hours of each employee :
+
+I think mainatain a table like this :
+EmpID | EmpName | Type | Working Hours | How many items produced | Payments |
+
+
++++++ Textile +++++
+
+Zyentra buys fabric from several textile shops.
+
+**AS ABOVE NEED TO MAINTAIN PROFILE FOR EACH TEXTILE SHOP MINTAIN DETAILS SUCH AS  TOTAL EXPENSE FOR FABRIC, TOTAL NUM. OF YARDS , LIST OF DESIGNS (WITH PHOTOS) FOR EACH TEXTILE SHOP AT THE END OF THE MONTH**
+
+when buy a fabric user need to maintain this
+Fabrci Photo| Yard | Quantity | Total Amount | Expected Items that produce  | Actual Items | Bill photo attached
+    
+Need to maintain these data and visualize expected items vs actual items for particular design at the end of the month
+
++++++ Clothshop ++++++
+
+**AS ABOVE NEED TO MAINTAIN PROFILE FOR EACH CLOTH SHOP MINTAIN DETAILS SUCH AS  TOTAL NUM. OF ITEMS GIVES , LIST OF GERMENTS(WITH PHOTOS) , TOTAL INCOME, TOTAL NEED TO BE SETTLE (RECEIVABLES) AT THE END OF THE MONTH ** 
+
+Need to maintain these things when give wholesale 
+Design Code | Design Name | Design Photo | Quantity | Total Amount | Paid or not (using simple switch)
+If payment not settle need to manage it 
+
+Also print bill with 
+Design Code | Design Name | Design Photo | Quantity | Total Amount
+
+++++ NEW DESIGN +++
+
+For this, we need security practise like otp verification through email or sms or WhatsApp or at least new login
+
+User can add new design using photo 
+design code |  design name | design photo | created date | expenses for the new design | finalized amount for the design
+
+to modify NEW design details needs to verify
+
+++++ Capital ++++
+Need to manage details about Capital 
+
+++++ Other Expenses ++++
+Need to manage details about Expenses 
+
+Here What I discover by discussing them.
+I need to build up well organized system that basically covered these requirements.
+
+First of all,I need to refine these things as well structured format.
+
+Then need to define How to connects these things one by one.
+
+Then We can consider about how can do more enhancements.
+
+
+
