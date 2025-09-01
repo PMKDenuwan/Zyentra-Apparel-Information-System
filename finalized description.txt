@@ -1,0 +1,422 @@
+Zyentra Apparel Store – System Requirement Summary
+1. Company Context
+
+Business Model (Current):
+
+Buys fabric from textile shops.
+
+Produces garments with employees + family members.
+
+Wholesales garments to clothing shops.
+
+Future Goal:
+
+Expand to retail (direct-to-customer).
+
+Maintain quality process + progress tracking from the startup stage.
+
+System Users:
+
+Owners (non-technical, want simplicity).
+
+Employees (limited involvement, mostly through daily data entry by owners).
+
+2. Core Modules & Requirements
+A. Journal Module (Daily Progress Tracking)
+
+Daily entry includes:
+
+No. of items produced.
+
+Photos of produced designs.
+
+No. of workers (dynamic form fields).
+
+Employee details: EmpID | Name | Hours Worked | Items Produced.
+
+Family contributions (checkbox: Owner / Husband / Daughter).
+
+Visualization (GitHub-like Matrix):
+
+Graph 1: Daily items produced (hover = items + employees).
+
+Graph 2: Daily working hours (hover = hours + employees).
+
+Color differentiation:
+
+Normal employee work.
+
+Only owner/family work.
+
+No work.
+
+Filters by month/year.
+
+B. Employee Management
+
+Employee form:
+
+EmpID, Name, Address, Telephone.
+
+Job Types (checkboxes: Daily Wage, Hourly, Piece Rate, Full Time).
+
+Track:
+
+Attendance & working hours.
+
+Items produced per employee.
+
+Payments (salary/wages/piece-rate).
+
+Reports (monthly):
+
+Total expenses on employees.
+
+Salaries per employee.
+
+Items produced per employee.
+
+Working hours per employee.
+
+Suggested Table:
+
+EmpID | Name | Job Type(s) | Hours Worked | Items Produced | Payments
+
+C. Textile Management
+
+Profile for each textile shop:
+
+Total expense on fabric.
+
+Total yards purchased.
+
+List of designs (with photos).
+
+When buying fabric:
+
+Fabric photo | Yard | Quantity | Amount | Expected Items | Actual Items | Bill Photo.
+
+Reports (monthly):
+
+Expected vs. Actual items per design.
+
+D. Cloth Shop Management
+
+Profile for each clothing shop:
+
+Total items supplied.
+
+List of garments (with photos).
+
+Total income.
+
+Pending receivables.
+
+Transaction details:
+
+Design Code | Name | Photo | Quantity | Amount | Payment status (switch: Paid/Unpaid).
+
+Ability to print wholesale bill.
+
+E. Design Management (New Designs)
+
+Add new design (with security verification – OTP/email/WhatsApp).
+
+Design Code | Name | Photo | Created Date | Expenses | Finalized Amount.
+
+Modification requires verification.
+
+F. Capital Management
+
+Track initial + ongoing capital contributions.
+
+Show available vs. used capital.
+
+G. Other Expenses
+
+Track non-employee, non-textile expenses.
+
+Summarize in monthly expense reports.
+
+3. System Connections
+
+Journal → Employee Module:
+
+Employee hours/items feed into payroll + production tracking.
+
+Journal → Graphs:
+
+Feeds daily progress matrices.
+
+Textile Module → Design Module:
+
+Fabric purchases link to new garment designs.
+
+Cloth Shop Module → Design Module:
+
+Track which designs were sold to which shop.
+
+Capital & Other Expenses → Reports:
+
+Contribute to monthly profit/loss calculations.
+
+===========================================================================================
+📌 How to Explain the System to Zyentra Owners
+1. Start with the Vision
+
+🗣️ “This system is like your company’s digital journal. It helps you record, track, and see your daily work, so you can measure your growth month by month and year by year. Right now it’s simple, but we plan it in a way that it can grow with your business in the future.”
+
+2. Show the Flow (Step by Step)
+Step 1: Daily Journal (Heart of the System)
+
+At the end of each day, you (or a family member) just enter:
+
+How many items produced.
+
+Who worked (employees + family).
+
+How many hours they worked.
+
+Upload photos if needed.
+
+👉 System automatically creates a progress calendar (like GitHub’s graph).
+
+Green = production day.
+
+Light color = only owner/family worked.
+
+Empty = no work.
+
+Hover = shows details of items/hours.
+
+This way you can see your effort in one glance.
+
+Step 2: Employee Tracking
+
+Employees have profiles (Name, Contact, Job Type).
+
+Each day’s journal entry automatically updates their records:
+
+Days worked, hours worked, items produced.
+
+At the end of the month, system shows:
+
+Salary/Payments per employee (daily, hourly, piece-rate, full-time).
+
+Total expenses on workers.
+
+Contribution report (who worked most, efficiency, etc.).
+
+👉 No separate attendance needed — it comes naturally from the journal.
+
+Step 3: Fabric & Textile Shops
+
+When you buy fabric, you record it with:
+
+Shop name, fabric photo, yards, bill photo.
+
+System links fabric → garments produced.
+
+End of month, system shows:
+
+Total fabric cost.
+
+Expected items vs. actual items produced.
+
+Efficiency % (fabric utilization).
+
+👉 This avoids wastage and gives clear fabric cost per garment design.
+
+Step 4: Selling to Clothing Shops
+
+When you give garments to a shop, record it with:
+
+Shop name, design photo, quantity, total amount.
+
+Payment status (Paid/Unpaid).
+
+System tracks:
+
+Total items supplied.
+
+Income.
+
+Pending payments.
+
+Can also print bills directly.
+
+👉 Helps you avoid missing payments and builds shop-wise history.
+
+Step 5: Design Management
+
+Each design has: Code, Name, Photo, Expenses, Finalized Price.
+
+Any changes to design require verification (OTP/email/WhatsApp).
+
+👉 Keeps your financial details secure.
+
+Step 6: Capital & Other Expenses
+
+Record capital contributions.
+
+Record other expenses (electricity, rent, packaging, etc.).
+
+End of month → Full financial summary.
+
+3. End with Benefits (Keep it Simple)
+
+🗣️ “With this system, you will always know:
+
+How much you produced each day.
+
+How much work your employees and family put in.
+
+How much you spent on fabric, salaries, and other expenses.
+
+How much income you earned and what payments are pending.
+
+How your business is growing month by month.”
+
+👉 “It’s like having a digital diary + accountant + manager in one place. You don’t need to be technical — just enter daily work, and the system will do the rest.”
+
+===========================================================================================
+
+Module-Wise Breakdown
+Module 1: Journal Module (Start Here 🚀)
+
+Core of the system → all other modules depend on daily journal.
+
+Features:
+
+Add daily entry (items, employees, hours, photos).
+
+Generate GitHub-like progress matrix.
+
+Tables: journal_entries, journal_employees
+
+👉 Why first? Without journal, no production tracking → no data for employees, expenses, sales.
+
+Module 2: Employee Management
+
+Add/Edit employees.
+
+Link job type (daily/hourly/piece-rate/full-time).
+
+Get attendance & production data from journal.
+
+Monthly salary & payment summary.
+
+Tables: employees, employee_jobs, employee_payments
+
+Module 3: Textile Management
+
+Add textile shops + fabric purchases.
+
+Link fabric → designs.
+
+Track expected vs. actual garments.
+
+Tables: textile_shops, fabrics, fabric_designs
+
+Module 4: Clothing Shop Management
+
+Add clothing shops.
+
+Record wholesale sales (design, quantity, amount, payment status).
+
+Print bills.
+
+Tables: clothing_shops, wholesale_orders
+
+Module 5: Design Management
+
+Securely add/modify designs (OTP verification).
+
+Store expenses + finalized amount.
+
+Tables: designs
+
+Module 6: Capital & Other Expenses
+
+Track capital entries.
+
+Record miscellaneous expenses.
+
+Monthly profit/loss summary.
+
+Tables: capital_entries, expenses
+
+4. Development Roadmap (Step-by-Step Plan)
+
+🔹 Phase 1 (MVP – Core Tracking)
+
+Journal Module (daily entry + graphs).
+
+Employee Module (basic employee profiles + payroll calculation).
+
+🔹 Phase 2 (Operations Expansion)
+3. Textile Module (fabric tracking).
+4. Clothing Shop Module (sales, payments, billing).
+
+🔹 Phase 3 (Business Growth)
+5. Design Module (OTP-secured).
+6. Capital & Expenses (full finance reports).
+
+===========================================================================================
+
+Tech Stack
+
+Layer    	Technology	                        Notes
+Frontend	React.js + TypeScript	                Dynamic UI, reusable components
+UI Framework	Flowbite React	                        Pre-built components, clean design
+Charts/Graphs	Recharts / react-calendar-heatmap	For GitHub-like progress matrix
+Backend	Node.js + Express.js	                        REST API for all modules
+Database	MySQL	                                Relational DB for employees, textile, sales, expenses
+ORM	Sequelize	Simplifies DB interactions
+File Storage	Local storage (uploads/) initially	Later Firebase/AWS S3
+Authentication	JWT	Secure login + role-based access
+Verification	OTP via email/WhatsApp (optional)	For design modifications
+Deployment	Local server / LAN initially	Later cloud hosting (Vercel, Railway, AWS)
+
+==========================================================================================
+
+Module-wise Breakdown
+Module	Features	Tables
+Journal	Daily entries: items produced, working hours, photos, employee contribution, progress matrix	journal_entries, journal_employees
+Employee Management	Profiles, job types, auto-calc salary, monthly reports	employees, employee_jobs, employee_payments
+Textile Management	Fabric purchase tracking, photos, expected vs actual items	textile_shops, fabrics, fabric_designs
+Clothing Shop Management	Wholesale tracking, payment status, printable bills	clothing_shops, wholesale_orders
+Design Management	Add/modify designs with OTP verification	designs
+Capital & Expenses	Track capital, other expenses, generate monthly profit/loss	capital_entries, expenses
+
+==========================================================================================
+
+🎯 Unique Features Already in Your Project
+
+GitHub-like Daily Journal Matrix
+
+That’s a really unique and eye-catching idea.
+
+Not many business systems track daily productivity in such a visual way.
+
+This shows creativity and UX thinking.
+
+Flexible Employee Job Types
+
+Allowing one employee to have multiple job types (daily, hourly, piece-rate, monthly).
+
+That’s rare in simple ERP-style systems, but very practical for small garment businesses.
+
+Fabric → Design → Shop Linkage
+
+You are connecting textile purchases → garment designs → wholesale shops → income tracking.
+
+This creates a mini supply chain management system, which is complex and unique.
+
+Owner/Family Contributions Tracking
+
+Very personal to this business. Shows you adapted system design to their reality.
+
+Security in Design Modifications (OTP for editing)
+
+This is a simple but strong idea → ensures no one casually edits financial design details.
